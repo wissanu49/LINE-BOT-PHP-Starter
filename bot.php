@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			$mes[] = explode(" ",$text);			
+			$mes = explode(" ",$text);			
 			if($mes[0] == "check"){
 				
 				// Build message to reply back
