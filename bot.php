@@ -15,13 +15,16 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			$mes = explode(" ",$text);			
+			$mes = explode(" ",$text);	
+			
+			
 			if($mes[0] == "check"){
 				
 				// Build message to reply back
+				$rep = "ยินดีด้วย เราตรวจสอบแล้ว ".$mes[1]." Online";
 				$messages = [
 					'type' => 'text',
-					'text' => 'Check Function.'
+					'text' => $rep
 				];
 				// Make a POST Request to Messaging API to reply to sender
 				$url = 'https://api.line.me/v2/bot/message/reply';
