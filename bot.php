@@ -18,8 +18,19 @@ if (!is_null($events['events'])) {
 			$mes = explode(" ",$text);	
 			
 			
+			
+			
 			if($mes[0] == "check"){
+				$url2 = "http://ifusion.co.th/status/index.php";
 				
+				//$headers = array('Authorization: Bearer ' . $access_token);
+				$ch = curl_init($url2);
+				//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+				$result = curl_exec($ch);
+				curl_close($ch);
+				/*
 				// Build message to reply back
 				$rep = "ยินดีด้วย เราตรวจสอบแล้ว ".$mes[1]." Online";
 				$messages = [
@@ -43,6 +54,8 @@ if (!is_null($events['events'])) {
 				$result = curl_exec($ch);
 				curl_close($ch);
 				echo $result . "\r\n";
+				
+				*/
 			}
 			
 			
