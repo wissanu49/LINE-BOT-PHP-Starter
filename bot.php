@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
 			  $arrPostData['messages'][0]['type'] = "text";
 			  $arrPostData['messages'][0]['text'] = "ฉันไม่เข้าใจคำสั่ง";
 			}
-			
+			$url = 'https://api.line.me/v2/bot/message/reply';
 			$post = json_encode($arrPostData);
 				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 				$ch = curl_init($url);
